@@ -6,7 +6,7 @@ export default function NotFound() {
     <Center>
       <VStack spacing={5}>
         <Text as="h1">Error. Page not found</Text>
-        <Button bg="blue.300">
+        <Button color="white" bg="green.900" _hover={{ bg: "green.800" }}>
           <Link to="/github-user">View my GitHub profile</Link>
         </Button>
       </VStack>

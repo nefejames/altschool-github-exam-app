@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { Flex } from "@chakra-ui/react";
-import GitHubUser from "./components/GitHubUser";
+import GitHubUser from "./pages/GitHubUser";
 import Home from "./pages/Home";
 import NotFound from "./pages/404";
 import Header from "./components/Header";

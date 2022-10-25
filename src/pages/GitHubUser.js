@@ -1,7 +1,7 @@
 import { Box, Flex, Image, VStack, Text, Button } from "@chakra-ui/react";
-import Card from "./Card";
-import GitHubUserAnalytics from "./GitHubUserAnalytics";
-import GitHubUserLinks from "./GitHubUserLinks";
+import Card from "../components/Card";
+import GitHubUserAnalytics from "../components/GitHubUserAnalytics";
+import GitHubUserLinks from "../components/GitHubUserLinks";
 import { Link } from "react-router-dom";
 import { BsStar } from "react-icons/bs";
 
