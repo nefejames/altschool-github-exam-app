@@ -5,7 +5,7 @@ export default function Header() {
   const ChakraLink = chakra(Link);
 
   return (
-    <chakra.header bg="gray.800" w="99vw" color="#fff">
+    <chakra.header bg="gray.800" w="full" color="#fff">
       <chakra.nav>
         <Center h="8vh">
           <HStack spacing={5}>

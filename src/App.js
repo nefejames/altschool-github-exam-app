@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { Box, Center } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import GitHubUser from "./components/GitHubUser";
 import Home from "./pages/Home";
 import NotFound from "./pages/404";
@@ -9,14 +9,20 @@ function App() {
   return (
     <>
       <Header />
-      <Center mt={[20, 10]} as="main">
+      <Flex
+        justify="center"
+        alignItems="center"
+        as="main"
+        bg="gray.100"
+        h="92vh"
+      >
         <Routes>
           <Route exact path="/" element={<Home />}>
             <Route path="/github-user" element={<GitHubUser />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </Center>
+      </Flex>
     </>
   );
 }
