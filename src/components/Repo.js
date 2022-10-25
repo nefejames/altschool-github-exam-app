@@ -1,14 +1,4 @@
-import {
-  Box,
-  Button,
-  Flex,
-  Heading,
-  HStack,
-  VStack,
-  Text,
-} from "@chakra-ui/react";
-import { Link } from "react-router-dom";
-
+import { Flex, Heading, HStack, VStack, Text } from "@chakra-ui/react";
 import { FiStar, FiExternalLink } from "react-icons/fi";
 
 export default function Repo() {
