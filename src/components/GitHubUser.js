@@ -1,18 +1,13 @@
-import { Box, Flex, Image, VStack, Text } from "@chakra-ui/react";
+import { Box, Flex, Image, VStack, Text, Button } from "@chakra-ui/react";
+import Card from "./Card";
 import GitHubUserAnalytics from "./GitHubUserAnalytics";
 import GitHubUserLinks from "./GitHubUserLinks";
+import { Link } from "react-router-dom";
 import { BsStar } from "react-icons/bs";
 
 export default function GitHubUser() {
   return (
-    <Box
-      bg="white"
-      boxShadow="lg"
-      p={10}
-      pb="60px"
-      borderRadius="md"
-      border="2px solid teal.800"
-    >
+    <Card>
       <Flex
         display="flex"
         flexDir={["column", "row"]}
@@ -49,8 +44,18 @@ export default function GitHubUser() {
           <GitHubUserAnalytics />
 
           <GitHubUserLinks />
+          <Button
+            color="white"
+            bg="green.900"
+            w="full"
+            size="lg"
+            fontSize="md"
+            _hover={{ bg: "green.800" }}
+          >
+            <Link to="/">View my Repos</Link>
+          </Button>
         </VStack>
       </Flex>
-    </Box>
+    </Card>
   );
 }
