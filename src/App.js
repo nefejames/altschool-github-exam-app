@@ -15,7 +15,7 @@ function App() {
         alignItems="center"
         as="main"
         bg="gray.100"
-        h="92vh"
+        h="90vh"
       >
         <Routes>
           <Route exact path="/" element={<Home />}>

@@ -1,6 +1,10 @@
 import { Flex, Text, VStack } from "@chakra-ui/react";
 
-export default function GitHubUserAnalytics() {
+export default function GitHubUserAnalytics({
+  noOfRepos,
+  noOfFollowers,
+  noOfFollowing,
+}) {
   return (
     <Flex
       justify="space-between"
@@ -13,19 +17,19 @@ export default function GitHubUserAnalytics() {
       <VStack spacing={-1}>
         <Text as="span">Repos</Text>
         <Text as="span" fontWeight="bold" fontSize="xl">
-          182
+          {noOfRepos}
         </Text>
       </VStack>
       <VStack spacing={-1}>
         <Text as="span">Followers</Text>
         <Text as="span" fontWeight="bold" fontSize="xl">
-          40
+          {noOfFollowers}
         </Text>
       </VStack>
       <VStack spacing={-1}>
         <Text as="span">Following</Text>
         <Text as="span" fontWeight="bold" fontSize="xl">
-          142
+          {noOfFollowing}
         </Text>
       </VStack>
     </Flex>

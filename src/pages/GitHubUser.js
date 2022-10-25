@@ -3,9 +3,11 @@ import Card from "../components/Card";
 import GitHubUserAnalytics from "../components/GitHubUserAnalytics";
 import GitHubUserLinks from "../components/GitHubUserLinks";
 import { Link } from "react-router-dom";
-import { BsStar } from "react-icons/bs";
+import { useGitHubContext } from "../context/GitHubContext";
 
 export default function GitHubUser() {
+  const data = useGitHubContext();
+
   return (
     <Card>
       <Flex
@@ -18,12 +20,12 @@ export default function GitHubUser() {
           <Image
             boxSize="full"
             objectFit="cover"
-            borderRadius="md"
-            src="https://randomuser.me/api/portraits/women/45.jpg"
+            borderRadius="lg"
+            src={data.avatar_url}
             alt="my image"
           />
           <Text as="span" mt={3} display="inline-block" color="teal.900">
-            @nefejames
+            @{data.login}
           </Text>
         </Box>
         <VStack spacing={7}>
@@ -35,15 +37,20 @@ export default function GitHubUser() {
                 fontSize="3xl"
                 color="teal.900"
               >
-                Emadamerho-Atori Nefe
+                {data.name}
               </Text>
             </VStack>
-            <Text as="p">Awesome Twitter Bio</Text>
+            <Text as="p">{data.bio}</Text>
           </VStack>
 
-          <GitHubUserAnalytics />
+          <GitHubUserAnalytics
+            noOfRepos={data.public_repos}
+            noOfFollowers={data.followers}
+            noOfFollowing={data.following}
+          />
 
-          <GitHubUserLinks />
+          <GitHubUserLinks webUrl={data.blog} location={data.location} />
+
           <Button
             color="white"
             bg="green.900"

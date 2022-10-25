@@ -7,7 +7,7 @@ export default function Card({ children }) {
       boxShadow="lg"
       p={10}
       pb="60px"
-      borderRadius="md"
+      borderRadius="lg"
       border="2px solid teal.800"
     >
       {children}

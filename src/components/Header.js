@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <chakra.header bg="gray.800" w="full" color="#fff">
       <chakra.nav>
-        <Center h="8vh">
+        <Center h="60px">
           <HStack spacing={5}>
             <ChakraLink to="/" fontSize="lg">
               Home
