@@ -1,5 +1,5 @@
 import { HStack, Text } from "@chakra-ui/react";
-import { BiLink, BiLocationPlus } from "react-icons/bi";
+import { BiLink, BiMap } from "react-icons/bi";
 
 export default function GitHubUserLinks({ webUrl, location }) {
   return (
@@ -11,7 +11,7 @@ export default function GitHubUserLinks({ webUrl, location }) {
         </HStack>
       </a>
       <HStack>
-        <BiLocationPlus />
+        <BiMap />
         <Text as="span">{location}</Text>
       </HStack>
     </HStack>
