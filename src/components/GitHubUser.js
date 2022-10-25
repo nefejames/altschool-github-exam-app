@@ -27,14 +27,19 @@ export default function GitHubUser() {
             src="https://randomuser.me/api/portraits/women/45.jpg"
             alt="my image"
           />
-          <Text as="span" mt={3} display="inline-block">
+          <Text as="span" mt={3} display="inline-block" color="teal.900">
             @nefejames
           </Text>
         </Box>
         <VStack spacing={7}>
           <VStack spacing={5}>
             <VStack>
-              <Text as="span" fontWeight="extrabold" fontSize="3xl">
+              <Text
+                as="span"
+                fontWeight="extrabold"
+                fontSize="3xl"
+                color="teal.900"
+              >
                 Emadamerho-Atori Nefe
               </Text>
             </VStack>

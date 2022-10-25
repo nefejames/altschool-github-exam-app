@@ -4,7 +4,7 @@ export default function GitHubUserAnalytics() {
   return (
     <Flex
       justify="space-between"
-      bg="green.200"
+      bg="green.100"
       borderRadius="lg"
       px={7}
       py={3}
