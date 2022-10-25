@@ -3,10 +3,10 @@ import Card from "../components/Card";
 import GitHubUserAnalytics from "../components/GitHubUserAnalytics";
 import GitHubUserLinks from "../components/GitHubUserLinks";
 import { Link } from "react-router-dom";
-import { useGitHubContext } from "../context/GitHubContext";
+import { useGitHubUserContext } from "../context/GitHubUserContext";
 
 export default function GitHubUser() {
-  const data = useGitHubContext();
+  const data = useGitHubUserContext();
 
   return (
     <Card>
