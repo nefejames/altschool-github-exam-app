@@ -1,4 +1,13 @@
-import { Box, Flex, Image, VStack, Text, Button } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Image,
+  VStack,
+  Text,
+  Button,
+  Spinner,
+  chakra,
+} from "@chakra-ui/react";
 import Card from "../components/Card";
 import GitHubUserAnalytics from "../components/GitHubUserAnalytics";
 import GitHubUserLinks from "../components/GitHubUserLinks";
@@ -7,6 +16,9 @@ import { useGitHubUserContext } from "../context/GitHubUserContext";
 
 export default function GitHubUser() {
   const data = useGitHubUserContext();
+  const ChakraLink = chakra(Link);
+
+  if (!data) return <Spinner size="xl" />;
 
   return (
     <Card>
@@ -51,16 +63,18 @@ export default function GitHubUser() {
 
           <GitHubUserLinks webUrl={data.blog} location={data.location} />
 
-          <Button
-            color="white"
-            bg="green.900"
-            w="full"
-            size="lg"
-            fontSize="md"
-            _hover={{ bg: "green.800" }}
-          >
-            <Link to="/">View my Repos</Link>
-          </Button>
+          <ChakraLink to="/repos" w="full">
+            <Button
+              color="white"
+              bg="green.900"
+              w="full"
+              size="lg"
+              fontSize="md"
+              _hover={{ bg: "green.800" }}
+            >
+              View my Repos
+            </Button>
+          </ChakraLink>
         </VStack>
       </Flex>
     </Card>
