@@ -12,8 +12,8 @@ export default function Header() {
             <ChakraLink to="/" fontSize="lg">
               Home
             </ChakraLink>
-            <ChakraLink to="/github-user" fontSize="lg">
-              Repos
+            <ChakraLink to="/github-profile" fontSize="lg">
+              My GitHub Profile
             </ChakraLink>
           </HStack>
         </Center>

@@ -18,7 +18,7 @@ function App() {
       >
         <Routes>
           <Route exact path="/" element={<Home />}>
-            <Route path="/github-user" element={<GitHubUser />} />
+            <Route path="/github-profile" element={<GitHubUser />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
