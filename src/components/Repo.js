@@ -14,8 +14,8 @@ export default function Repo({ stars, repoUrl, repoName, desc, progLang }) {
       justify="space-between"
       border="1px solid teal.800"
     >
-      <VStack spacing={4}>
-        <VStack spacing={2}>
+      <VStack spacing={4} alignItems="start">
+        <VStack spacing={2} alignItems="start">
           <Heading as="h2" fontSize="lg">
             {repoName}
           </Heading>

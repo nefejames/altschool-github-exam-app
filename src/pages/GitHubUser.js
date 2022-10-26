@@ -40,8 +40,8 @@ export default function GitHubUser() {
             @{data.login}
           </Text>
         </Box>
-        <VStack spacing={7}>
-          <VStack spacing={5}>
+        <VStack spacing={7} alignItems="start">
+          <VStack spacing={5} alignItems="start">
             <VStack>
               <Text
                 as="span"

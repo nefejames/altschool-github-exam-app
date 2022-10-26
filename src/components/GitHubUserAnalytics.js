@@ -13,6 +13,7 @@ export default function GitHubUserAnalytics({
       px={7}
       py={3}
       w={["full", "400px"]}
+      alignItems="start"
     >
       <VStack spacing={-1}>
         <Text as="span">Repos</Text>
