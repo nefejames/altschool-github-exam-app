@@ -1,12 +1,13 @@
-import { Flex, Heading, HStack, VStack, Text } from "@chakra-ui/react";
-import { FiStar, FiExternalLink } from "react-icons/fi";
+import { Flex, Heading, HStack, Tag, VStack, Text } from "@chakra-ui/react";
+import { FiExternalLink } from "react-icons/fi";
 
-export default function Repo() {
+export default function Repo({ stars, repoUrl, repoName, desc, progLang }) {
   return (
     <Flex
       px={6}
       py={4}
-      w={["full", "450px"]}
+      w={["90%", "450px"]}
+      margin={"0 auto"}
       bg="white"
       boxShadow="lg"
       borderRadius="md"
@@ -16,23 +17,24 @@ export default function Repo() {
       <VStack spacing={4}>
         <VStack spacing={2}>
           <Heading as="h2" fontSize="lg">
-            Altschool-app-cool
+            {repoName}
           </Heading>
-          <Text as="p">A really cool app for AltSchool</Text>
+          <Text as="p" noOfLines={2}>
+            {desc}
+          </Text>
         </VStack>
 
-        <HStack spacing={5} fontSize="sm">
-          <span>JavaScript</span>
-          <span>Updated 28 mins ago</span>
+        <HStack spacing={3}>
+          {progLang && <Tag colorScheme="green">{progLang}</Tag>}
+          <Tag colorScheme="green">
+            {stars > 0 ? `Stars: ${stars}` : "No Stars"}
+          </Tag>
         </HStack>
       </VStack>
 
-      <HStack spacing={3}>
-        <FiStar />
-        <a href="https://google.com" target="_blank" rel="noopener noreferrer">
-          <FiExternalLink />
-        </a>
-      </HStack>
+      <a href={repoUrl} target="_blank" rel="noopener noreferrer">
+        <FiExternalLink />
+      </a>
     </Flex>
   );
 }
