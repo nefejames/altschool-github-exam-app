@@ -15,6 +15,9 @@ export default function Header() {
             <ChakraLink to="/github-profile" fontSize="lg">
               My GitHub Profile
             </ChakraLink>
+            <ChakraLink to="/error" fontSize="lg">
+              Error route
+            </ChakraLink>
           </HStack>
         </Center>
       </chakra.nav>
