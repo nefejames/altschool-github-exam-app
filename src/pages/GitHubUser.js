@@ -1,7 +1,6 @@
 import {
   Box,
   Flex,
-  Image,
   VStack,
   Text,
   Button,
@@ -13,10 +12,14 @@ import GitHubUserAnalytics from "../components/GitHubUserAnalytics";
 import GitHubUserLinks from "../components/GitHubUserLinks";
 import { Link } from "react-router-dom";
 import { useGitHubUserContext } from "../context/GitHubUserContext";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+import PlaceholderImage from "../images/placeholder.jpg";
 
 export default function GitHubUser() {
   const data = useGitHubUserContext();
   const ChakraLink = chakra(Link);
+  const ChakraLazyLoadImage = chakra(LazyLoadImage);
 
   if (!data) return <Spinner size="xl" />;
 
@@ -29,13 +32,16 @@ export default function GitHubUser() {
         w={["full", "700px"]}
       >
         <Box width={["full", "300px"]}>
-          <Image
-            boxSize="full"
+          <ChakraLazyLoadImage
             objectFit="cover"
+            height="300"
             borderRadius="lg"
             src={data.avatar_url}
+            PlaceholderSrc={PlaceholderImage}
             alt="my image"
+            effect="blur"
           />
+
           <Text as="span" mt={3} display="inline-block" color="teal.900">
             @{data.login}
           </Text>
