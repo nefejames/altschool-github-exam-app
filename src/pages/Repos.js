@@ -1,4 +1,4 @@
-import { Center, SimpleGrid, Spinner } from "@chakra-ui/react";
+import { SimpleGrid, Spinner } from "@chakra-ui/react";
 import Repo from "../components/Repo";
 import { useGitHubReposContext } from "../context/GitHubReposContext";
 
