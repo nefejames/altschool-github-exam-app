@@ -5,6 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import { ChakraProvider } from "@chakra-ui/react";
 import GitHubUserContextProvider from "./context/GitHubUserContext";
 import GitHubReposContextProvider from "./context/GitHubReposContext";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -13,7 +14,9 @@ root.render(
       <ChakraProvider>
         <GitHubUserContextProvider>
           <GitHubReposContextProvider>
-            <App />
+            <ErrorBoundary>
+              <App />
+            </ErrorBoundary>
           </GitHubReposContextProvider>
         </GitHubUserContextProvider>
       </ChakraProvider>

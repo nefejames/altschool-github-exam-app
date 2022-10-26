@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import NotFound from "./pages/404";
 import Header from "./components/Header";
 import Repos from "./pages/Repos";
+import Error from "./pages/Error";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/github-profile" element={<GitHubUser />} />
           </Route>
           <Route path="/repos" element={<Repos />} />
+          <Route path="/error" element={<Error />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Flex>
