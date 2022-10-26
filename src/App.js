@@ -6,10 +6,12 @@ import NotFound from "./pages/404";
 import Header from "./components/Header";
 import Repos from "./pages/Repos";
 import Error from "./pages/Error";
+import SEO from "./components/SEO";
 
 function App() {
   return (
     <>
+      <SEO title="My GitHub App" />
       <Header />
       <Flex
         justify="center"
