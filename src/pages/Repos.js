@@ -2,6 +2,7 @@ import { SimpleGrid, Spinner } from "@chakra-ui/react";
 import Repo from "../components/Repo";
 import { useGitHubReposContext } from "../context/GitHubReposContext";
 import SEO from "../components/SEO";
+import { Outlet } from "react-router-dom";
 
 export default function Repos() {
   const data = useGitHubReposContext();
@@ -17,7 +18,8 @@ export default function Repos() {
           <Repo
             key={repo.name}
             stars={repo.stargazers_count}
-            repoUrl={repo.html_url}
+            repoUrl={repo.name}
+            gitHubUrl={repo.html_url}
             repoName={repo.name}
             desc={repo.description}
             progLang={repo.language}

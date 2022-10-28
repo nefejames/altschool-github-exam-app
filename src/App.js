@@ -23,8 +23,9 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />}>
             <Route path="/github-profile" element={<GitHubUser />} />
+            <Route path="repos" element={<Repos />} />
           </Route>
-          <Route path="/repos" element={<Repos />} />
+
           <Route path="/error" element={<Error />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
