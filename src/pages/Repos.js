@@ -12,7 +12,6 @@ export default function Repos() {
     handlePageChange,
     totalNoOfPages,
     currentPage,
-    GitHubReposData,
     loading,
   } = useGitHubReposContext();
 

@@ -59,7 +59,6 @@ export default function GitHubReposContextProvider({ children }) {
     handlePageChange,
     totalNoOfPages,
     currentPage,
-    GitHubReposData,
     loading,
   };
 
