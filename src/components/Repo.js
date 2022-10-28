@@ -1,26 +1,7 @@
-import {
-  Flex,
-  Heading,
-  HStack,
-  Tag,
-  VStack,
-  Text,
-  chakra,
-} from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Flex, Heading, HStack, Tag, VStack, Text } from "@chakra-ui/react";
 import { FiExternalLink } from "react-icons/fi";
 
-const ReactChakraLink = chakra(Link);
-
-export default function Repo({
-  stars,
-  repoUrl,
-  gitHubUrl,
-  repoName,
-  desc,
-  progLang,
-}) {
-  console.log(stars, repoUrl, repoName, desc, progLang);
+export default function Repo({ stars, gitHubUrl, repoName, desc, progLang }) {
   return (
     <Flex
       px={6}
@@ -44,7 +25,7 @@ export default function Repo({
           </Flex>
 
           {desc && (
-            <Text as="p" noOfLines={2}>
+            <Text as="p" noOfLines={1}>
               {desc}
             </Text>
           )}
