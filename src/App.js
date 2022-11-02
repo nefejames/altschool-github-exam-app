@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import Repos from "./pages/Repos";
 import Error from "./pages/Error";
 import SEO from "./components/SEO";
+import RepoDetails from "./components/RepoDetails";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route exact path="/" element={<Home />}>
             <Route path="/github-profile" element={<GitHubUser />} />
             <Route path="repos" element={<Repos />} />
+            <Route path="repos/:repoId" element={<RepoDetails />} />
           </Route>
 
           <Route path="/error" element={<Error />} />

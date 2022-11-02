@@ -1,8 +1,39 @@
-import { Flex, Heading, HStack, Tag, VStack, Text } from "@chakra-ui/react";
+import {
+  Flex,
+  Heading,
+  HStack,
+  Tag,
+  VStack,
+  Text,
+  Spinner,
+} from "@chakra-ui/react";
+import { useParams } from "react-router-dom";
+import { useGitHubReposContext } from "../context/GitHubReposContext";
 import { FiExternalLink } from "react-icons/fi";
-import { Link } from "react-router-dom";
 
-export default function Repo({ stars, repoName, desc, progLang }) {
+export default function RepoDetails({
+  stars = "8",
+  repoUrl = "https://hoogle.com",
+  repoName = "a repo",
+  desc = "a great repoooo",
+  progLang = "Go",
+}) {
+  const { repoId } = useParams();
+  const data = useGitHubReposContext();
+
+  function getmatchingRepo() {
+    const matchingRepo = data.filteredRepos.find((repo) => repo.name == repoId);
+    return matchingRepo;
+  }
+
+  console.log(getmatchingRepo());
+  console.log(repoId);
+  console.log(data.filteredRepos);
+
+  const repo = getmatchingRepo();
+
+  if (data.loading) return <Spinner size="xl" />;
+
   return (
     <Flex
       px={6}
@@ -20,9 +51,9 @@ export default function Repo({ stars, repoName, desc, progLang }) {
             <Heading as="h2" fontSize="lg">
               {repoName}
             </Heading>
-            <Link to={`${repoName}`} target="_blank" rel="noopener noreferrer">
+            <a href={repoUrl} target="_blank" rel="noopener noreferrer">
               <FiExternalLink />
-            </Link>
+            </a>
           </Flex>
 
           {desc && (

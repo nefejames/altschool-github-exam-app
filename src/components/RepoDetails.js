@@ -5,62 +5,69 @@ import {
   Tag,
   VStack,
   Text,
-  chakra,
+  Spinner,
 } from "@chakra-ui/react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useGitHubReposContext } from "../context/GitHubReposContext";
+import { FiExternalLink } from "react-icons/fi";
 
-const ReactChakraLink = chakra(Link);
-
-export default function RepoDetails({
-  stars,
-  repoUrl,
-  repoName,
-  desc,
-  progLang,
-}) {
+export default function RepoDetails() {
   const { repoId } = useParams();
   const data = useGitHubReposContext();
 
-  function getmatchingRepo() {
-    const matchingRepo = data.find((repo) => repo.name === repoId);
+  function getMatchingRepo() {
+    const matchingRepo = data.filteredRepos.find(
+      (repo) => repo.name === repoId
+    );
     return matchingRepo;
   }
+
+  console.log(getMatchingRepo());
+  console.log(repoId);
+  console.log(data.filteredRepos);
+
+  const repo = getMatchingRepo();
+
+  if (data.loading) return <Spinner size="xl" />;
 
   return (
     <Flex
       px={6}
       py={4}
+      w={["90%", "450px"]}
       margin="0 auto"
       bg="white"
       boxShadow="lg"
       borderRadius="md"
       justify="space-between"
-      border="1px solid teal.800"
     >
-      <ReactChakraLink to={repoUrl} px={6} w={["90%", "450px"]}>
-        <VStack spacing={4} alignItems="start">
-          <VStack spacing={2} alignItems="start">
+      <VStack spacing={4} alignItems="start" w="full">
+        <VStack spacing={2} alignItems="start" w="full">
+          <Flex justify="space-between" w="full">
             <Heading as="h2" fontSize="lg">
-              {repoName}
+              {repo.name}
             </Heading>
-            <Text as="p" noOfLines={2}>
-              {desc}
-            </Text>
-          </VStack>
+            <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
+              <FiExternalLink />
+            </a>
+          </Flex>
 
-          <HStack spacing={3}>
-            {progLang && <Tag colorScheme="green">{progLang}</Tag>}
-            <Tag colorScheme="green">
-              {stars > 0 ? `Stars: ${stars}` : "No Stars"}
-            </Tag>
-          </HStack>
+          {repo.description && (
+            <Text as="p" noOfLines={1}>
+              {repo.description}
+            </Text>
+          )}
         </VStack>
 
-        {/* <a href={repoUrl} target="_blank" rel="noopener noreferrer">
-        <FiExternalLink />
-      </a> */}
-      </ReactChakraLink>
+        <HStack spacing={3}>
+          {repo.language && <Tag colorScheme="green">{repo.language}</Tag>}
+          <Tag colorScheme="green">
+            {repo.stargazers_count > 0
+              ? `Stars: ${repo.stargazers_count}`
+              : "No Stars"}
+          </Tag>
+        </HStack>
+      </VStack>
     </Flex>
   );
 }
