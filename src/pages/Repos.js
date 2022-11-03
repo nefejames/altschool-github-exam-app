@@ -25,12 +25,9 @@ export default function Repos() {
         {filteredRepos.map((repo) => (
           <Repo
             key={repo.name}
-            stars={repo.stargazers_count}
-            repoUrl={repo.name}
-            gitHubUrl={repo.html_url}
             repoName={repo.name}
-            desc={repo.description}
             progLang={repo.language}
+            stars={repo.stargazers_count}
           />
         ))}
       </SimpleGrid>
