@@ -1,4 +1,4 @@
-import { SimpleGrid, Spinner } from "@chakra-ui/react";
+import { Center, SimpleGrid, Spinner } from "@chakra-ui/react";
 import Repo from "../components/Repo";
 import { useGitHubReposContext } from "../context/GitHubReposContext";
 import SEO from "../components/SEO";
@@ -32,13 +32,15 @@ export default function Repos() {
         ))}
       </SimpleGrid>
 
-      <Pagination
-        onPageChange={handlePageChange}
-        currentPage={currentPage}
-        prevPage={prevPage}
-        nextPage={nextPage}
-        totalNoOfPages={totalNoOfPages}
-      />
+      <Center>
+        <Pagination
+          onPageChange={handlePageChange}
+          currentPage={currentPage}
+          prevPage={prevPage}
+          nextPage={nextPage}
+          totalNoOfPages={totalNoOfPages}
+        />
+      </Center>
     </>
   );
 }
