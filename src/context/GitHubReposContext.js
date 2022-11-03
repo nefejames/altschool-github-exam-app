@@ -5,7 +5,6 @@ export const useGitHubReposContext = () => useContext(GitHubReposContext);
 
 export default function GitHubReposContextProvider({ children }) {
   const [GitHubReposData, setGitHubReposData] = useState([]);
-
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const totalNoOfPages = 5;
