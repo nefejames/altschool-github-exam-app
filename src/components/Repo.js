@@ -7,7 +7,7 @@ export default function Repo({ stars, repoName, progLang }) {
     <Flex
       px={6}
       py={4}
-      w={["90%", "450px"]}
+      w={["100%", "450px"]}
       margin="0 auto"
       bg="white"
       boxShadow="lg"
