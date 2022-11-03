@@ -32,7 +32,7 @@ export default function Repos() {
         ))}
       </SimpleGrid>
 
-      <Center>
+      <Center mb={10}>
         <Pagination
           onPageChange={handlePageChange}
           currentPage={currentPage}
