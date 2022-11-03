@@ -43,7 +43,7 @@ export default function GitHubUser() {
               height="300"
               borderRadius="lg"
               src={data.avatar_url}
-              PlaceholderSrc={PlaceholderImage}
+              placeholderSrc={PlaceholderImage}
               alt="my image"
               effect="blur"
             />
